@@ -3,6 +3,7 @@ package com.br.tecodev.mvc.mudi.dto;
 import javax.validation.constraints.NotBlank;
 
 import com.br.tecodev.mvc.mudi.model.Pedido;
+import com.br.tecodev.mvc.mudi.model.StatusPedido;
 
 public class RequisicaoNovoPedido {
 
@@ -43,11 +44,12 @@ public class RequisicaoNovoPedido {
 	}
 	
 	public Pedido toPedido() {
-		com.br.tecodev.mvc.mudi.model.Pedido pedido = new Pedido();
+		Pedido pedido = new Pedido();
 		pedido.setNomeProduto(nomeProduto);
 		pedido.setUrlProduto(urlProduto);
 		pedido.setDescricao(descricao);
 		pedido.setUrlImagem(urlImagem);
+		pedido.setStatus(StatusPedido.AGUARDANDO);
 		return pedido;
 	}
 	
